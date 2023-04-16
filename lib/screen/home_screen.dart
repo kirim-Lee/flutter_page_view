@@ -5,8 +5,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Home Screen'),
+    return Scaffold(
+      body: PageView(
+        children: [1,2,3,4,5]
+            .map(
+              (number) => Image.asset(
+                  'assets/img/img$number.jpg',
+                  fit:BoxFit.cover
+              ),
+            ).toList(),
+      ),
     );
   }
 }
